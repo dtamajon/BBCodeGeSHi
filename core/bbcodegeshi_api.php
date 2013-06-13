@@ -134,6 +134,14 @@ function plugin_bbcodegeshi_string_display_links( $p_string ) {
                         "plugin_bbcodegeshi_highlight_code( '$1', '$2' )",
                         "<sub>$1</sub>",
                         "<sup>$1</sup>" );
+
+    // Before start, remove extra <br> elements
+    $p_string = preg_replace('/<br[^>]*?>[\s|\n|\r|\t]*\[list/is','[list',$p_string);
+    $p_string = preg_replace('/\[\/list\][\s|\n|\r|\t]*<br[^>]*?>/is','[/list]',$p_string);
+    $p_string = preg_replace('/<br[^>]*?>[\s|\n|\r|\t]*\[ulist/is','[ulist',$p_string);
+    $p_string = preg_replace('/\[\/ulist\][\s|\n|\r|\t]*<br[^>]*?>/is','[/ulist]',$p_string);
+    $p_string = preg_replace('/<br[^>]*?>[\s|\n|\r|\t]*\[\*\]/is','[*]',$p_string);
+    
     $t_custom_tags = config_get( 'plugin_bbcodegeshi_custom_tags', array() );
     for( $i=0; $i<count( $t_custom_tags ); $i++ ) {
         if ( $t_custom_tags[$i]['type'] == 0 ) {
