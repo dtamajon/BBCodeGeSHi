@@ -41,3 +41,4 @@ $s_plugin_BBCodeGeSHi_menu_justify = 'Justify';
 $s_plugin_BBCodeGeSHi_menu_url = 'Add an URL';
 $s_plugin_BBCodeGeSHi_menu_email = 'Add an email link';
 $s_plugin_BBCodeGeSHi_menu_image = 'Add an image';
+?>
