@@ -68,8 +68,8 @@ function UpdateTextarea( id, tool ) {
     pre = '[' + tool + ']';
     post = '[/' + tool + ']';
   } else if ( tool == 'bullets' ) {
-    pre = '[list]\n[*] ';
-    post = '\n[/list]';
+    pre = '[ulist]\n[*] ';
+    post = '\n[/ulist]';
   } else if ( tool == 'numbers' ) {
     pre = '[list=1]\n[*] ';
     post = '\n[/list]';
